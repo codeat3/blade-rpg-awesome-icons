@@ -6,25 +6,37 @@ namespace Codeat3\BladeRPGAwesomeIcons;
 
 use BladeUI\Icons\Factory;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Container\Container;
 
 final class BladeRPGAwesomeIconsServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->callAfterResolving(Factory::class, function (Factory $factory) {
-            $factory->add('rpg-awesome-icons', [
-                'path' => __DIR__.'/../resources/svg',
-                'prefix' => 'rpg',
-            ]);
+        $this->registerConfig();
+
+        $this->callAfterResolving(Factory::class, function (Factory $factory, Container $container) {
+            $config = $container->make('config')->get('blade-rpg-awesome-icons', []);
+
+            $factory->add('rpg-awesome-icons', array_merge(['path' => __DIR__.'/../resources/svg'], $config));
         });
+
+    }
+
+    private function registerConfig(): void
+    {
+        $this->mergeConfigFrom(__DIR__.'/../config/blade-rpg-awesome-icons.php', 'blade-rpg-awesome-icons');
     }
 
     public function boot(): void
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../resources/svg' => public_path('vendor/blade-rpg'),
-            ], 'blade-rpg');
+                __DIR__.'/../resources/svg' => public_path('vendor/blade-rpg-awesome-icons'),
+            ], 'blade-rpg-awesome-icons');
+
+            $this->publishes([
+                __DIR__.'/../config/blade-rpg-awesome-icons.php' => $this->app->configPath('blade-rpg-awesome-icons.php'),
+            ], 'blade-rpg-awesome-icons-config');
         }
     }
 }
