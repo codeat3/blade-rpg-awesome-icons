@@ -32,7 +32,7 @@ final class BladeRPGAwesomeIconsServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../resources/svg' => public_path('vendor/blade-rpg-awesome-icons'),
-            ], 'blade-rpg-awesome-icons');
+            ], 'blade-rpg'); // TODO: update the alias to `blade-rpg-awesome-icons` for better readability in next major release
 
             $this->publishes([
                 __DIR__.'/../config/blade-rpg-awesome-icons.php' => $this->app->configPath('blade-rpg-awesome-icons.php'),
