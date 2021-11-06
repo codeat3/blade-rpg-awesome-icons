@@ -2,6 +2,8 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
+## [Unreleased](https://github.com/codeat3/blade-rpg-awesome-icons/compare/1.1.2...main)
+
 ## 1.1.2 (2021-05-14)
 typo fix the alias used to publish icons
 
