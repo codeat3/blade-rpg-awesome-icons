@@ -2,7 +2,15 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
-## [Unreleased](https://github.com/codeat3/blade-rpg-awesome-icons/compare/1.2.2...HEAD)
+## [Unreleased](https://github.com/codeat3/blade-rpg-awesome-icons/compare/1.3.2...HEAD)
+
+## [1.3.2](https://github.com/codeat3/blade-rpg-awesome-icons/compare/1.2.2...1.3.2) - 2022-02-05
+
+## What's Changed
+
+- Added support for Laravel 9 by @swapnilsarwe in https://github.com/codeat3/blade-rpg-awesome-icons/pull/3
+
+**Full Changelog**: https://github.com/codeat3/blade-rpg-awesome-icons/compare/1.2.2...1.3.2
 
 ## [1.2.2](https://github.com/codeat3/blade-rpg-awesome-icons/compare/1.1.2...1.2.2) - 2022-01-03
 
